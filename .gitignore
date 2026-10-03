@@ -1,0 +1,18 @@
+/Devops-Notes
+
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Terraform override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
