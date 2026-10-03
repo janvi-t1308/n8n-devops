@@ -1,18 +1,71 @@
-/Devops-Notes
+# ===========================
+# Terraform
+# ===========================
 
 .terraform/
 *.tfstate
 *.tfstate.*
 crash.log
-
-# macOS
-.DS_Store
-
-# VS Code
-.vscode/
-
-# Terraform override files
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
+
+# Terraform Variables
+*.tfvars
+*.tfvars.json
+
+# Terraform Plan Files
+*.tfplan
+
+# ===========================
+# Environment Variables
+# ===========================
+
+.env
+.env.*
+
+# ===========================
+# Logs
+# ===========================
+
+*.log
+
+# ===========================
+# macOS
+# ===========================
+
+.DS_Store
+
+# ===========================
+# Windows
+# ===========================
+
+Thumbs.db
+
+# ===========================
+# VS Code
+# ===========================
+
+.vscode/
+
+# ===========================
+# IntelliJ
+# ===========================
+
+.idea/
+
+# ===========================
+# Python
+# ===========================
+
+__pycache__/
+*.pyc
+
+# ===========================
+# Node
+# ===========================
+
+node_modules/
+
+Devops-Notes/
