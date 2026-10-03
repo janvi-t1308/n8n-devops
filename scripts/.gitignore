@@ -1,0 +1,6 @@
+.env
+*.pem
+*.tar.gz
+*.sql
+EC2_configuration
+Extra-Info

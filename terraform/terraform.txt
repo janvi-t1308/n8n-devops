@@ -1,0 +1,24 @@
+What exactly is Terraform?
+
+Terraform is a tool that lets you describe the infrastructure you want, and then automatically 
+creates and maintains it.
+
+##Terraform Concepts Learned
+
+####Version.tf
+
+the version.tf file defines the project dependencies and compatibility requirement. It sepcifies-
+
+1.The minimum version of terraform CLI to work with this project.
+2.The providers required by the project.
+3.The provider source.
+4.The minimum version of the provider.
+
+***Key Learnings***
+
+The version.tf does not configure the providers. Instead it tells terraform which provider will be installed during terraform init.
+
+The seperation follows the single responsibility principle-
+
+version.tf -> dependency management
+provider.tf -> provider configuration

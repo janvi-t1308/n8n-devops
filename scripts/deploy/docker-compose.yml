@@ -1,0 +1,54 @@
+services:
+  n8n-app:
+    image: docker.n8n.io/n8nio/n8n:2.25.7
+   # container_name: n8n-app-container
+
+    ports: 
+      - 5678:5678
+    env_file:
+      - ../.env
+    depends_on: 
+      n8n-db:
+        condition: service_healthy
+    volumes:
+      - n8n-data:/home/node/.n8n
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: "1"
+    #       memory: 2g
+    #     reservations:
+    #       cpus: "0.25"
+    #       memory: 512m    
+
+  n8n-db:
+   # container_name: n8n-db-container
+    image: postgres:18
+
+    env_file:
+      - ../.env
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+    volumes:
+      - n8n-db:/var/lib/postgresql
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    restart: unless-stopped
+
+volumes:
+  n8n-data:
+  n8n-db:
