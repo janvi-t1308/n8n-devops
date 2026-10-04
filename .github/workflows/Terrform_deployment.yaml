@@ -14,6 +14,10 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
 
+    defaults:
+      run: 
+        working-directory: Terraform
+
     steps:
 
       - name: checkout repository
@@ -33,6 +37,18 @@ jobs:
 
       - name: Verify AWS Credentials
         run: aws sts get-caller-identity
+
+      - name: Terraform Initialization
+        run: terraform init 
+
+      - name: Terraform format
+        run: terraform fmt
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform apply
+        run: terraform apply
 
   deploy:
     runs-on: ubuntu-latest
