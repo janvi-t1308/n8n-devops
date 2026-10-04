@@ -12,7 +12,6 @@ override.tf.json
 *_override.tf.json
 
 # Terraform Variables
-*.tfvars
 *.tfvars.json
 
 # Terraform Plan Files

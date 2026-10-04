@@ -11,9 +11,16 @@ variable "instance_type" {
   type        = string
 }
 
-variable "public_key_path" {
-  description = "Path to the SSH public key"
-  type        = string
+#this variable should be used only when running terraform from local because while running from github actions the local ssh public key
+#can't be find as the workflow runs on the runner which doesn't have the local public key  
+# variable "public_key_path" {
+#   description = "Path to the SSH public key"
+#   type        = string
+# }
+
+variable "SSH_public_key" {
+  description = "SSH Public key used for EC2"
+  type = string
 }
 
 variable "vpc_cidr" {
