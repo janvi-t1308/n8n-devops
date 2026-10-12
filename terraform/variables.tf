@@ -20,7 +20,7 @@ variable "instance_type" {
 
 variable "SSH_public_key" {
   description = "SSH Public key used for EC2"
-  type = string
+  type        = string
 }
 
 variable "vpc_cidr" {
