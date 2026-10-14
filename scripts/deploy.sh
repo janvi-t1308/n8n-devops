@@ -50,9 +50,10 @@ main () {
 
         if "$ROLLBACK"; then
             echo "[INFO] - Rollback completed successfully."
+        else
+            echo "[ERROR] - Roll back failed. Deployment is stopped."
         fi
 
-        echo "[ERROR] - Roll back failed. Deployment is stopped."
         exit 1
 
     fi
